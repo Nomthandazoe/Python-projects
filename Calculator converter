@@ -1,0 +1,33 @@
+from tkinter import *
+
+
+def cm_to_km():
+    cm_value = float(cm_input.get())
+    km = cm_value/100000
+    result_label.config(text=f"{km}")
+
+
+window = Tk()
+window.title("Centimeter to Kilometer converter")
+window.config(padx=50, pady=30)
+
+cm_input = Entry(width=8)
+cm_input.grid(column=1, row=0)
+
+cm_label = Label(text=" Centimeters")
+cm_label.grid(column=2, row=0)
+
+is_equal_label = Label(text="is equal to")
+is_equal_label.grid(column=0, row=1)
+
+result_label = Label(text="0")
+result_label.grid(column=1, row=1)
+
+km_label = Label(text="Km")
+km_label.grid(column=2, row=1)
+
+button = Button(text="Calculate", command=cm_to_km)
+button.grid(column=1, row=2)
+
+
+window.mainloop()
